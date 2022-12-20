@@ -1,0 +1,51 @@
+
+// DATA PROBLEMS:
+
+
+// DATA PROBLEMS #1
+// Кол-во строк и номера id – не совпадают
+total rows = 8810 - 1
+last row id: 's8807',
+
+after fixing this to rows:
+
+8808 -1 [ 's8807', ]
+
+
+
+// сломанные строки можно найти если поискать некорректные show_id
+{
+    show_id: 'Flying Fortress"',
+
+
+{
+    show_id: ' and probably will."',
+
+
+// broken rows
+s8420;Movie;The Memphis Belle: A Story of a;;;;;;;;;
+"Flying Fortress""";William Wyler;;United States;March 31, 2017;1944;TV-PG;40 min;Classic Movies, Documentaries;This documentary centers on the crew of the B-17 Flying Fortress Memphis Belle as it prepares to execute a strategic bombing mission over Germany.;;
+
+s8202;Movie;The Bad Education Movie;Elliot Hegarty;Jack Whitehall, Joanna Scanlan, Iain Glen, Ethan Lawrence, Layton Williams, Kae Alexander, Weruche Opia, Nikki Runeckles, Charlie Wernham, Jack Binstead;United Kingdom;December 15, 2018;2015;TV-MA;87 min;Comedies;Britain's most ineffective but caring teacher takes his class to Cornwall for one last school trip, where anything could happen вАУ
+" and probably will.""";;;;;;;;;;;
+
+
+// DATA PROBLEMS #2
+
+// в данных всякий мусор:
+```sh
+ag вАУ -c ../data-examples/netflix_titles.csv
+607
+```
+
+// DATA PROBLEMS #3
+
+в title могут быть как [and так и &]
+
+в unogs поиск по and
+
+
+// DATA PROBLEMS #4
+
+/// В данных из API тоже приходять битые titles
+/// Например c html entity: "Eric ldle&#39;s What About Dick?"
